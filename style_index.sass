@@ -12,6 +12,79 @@ $letra-mediana: 1.7rem
 $letra-grande: 3.5rem
 $letra-extraGrande: 4rem
 
+
+//Mixins 
+
+=titulos-principales($font-size, $color, $font-weight, $font-style, $margin-bottom)
+    font-size: $font-size
+    color: $color
+    font-weight: $font-weight
+    font-style: $font-style
+    margin-bottom: $margin-bottom
+
+.Titulos_Principales
+    +titulos-principales(60px, $color-2, bold, normal, 10px) // Ajusta los valores según tus variables y preferencias
+
+=titulos-secundarios($font-size, $color, $font-style, $font-weight, $margin-bottom)
+    font-size: $font-size
+    color: $color
+    font-style: $font-style
+    font-weight: $font-weight // Agregamos font-weight
+    margin-bottom: $margin-bottom // Agregar margen inferior
+
+.Titulos_secundarios
+    +titulos-secundarios(30px, $color-4, bold, normal, 15px) // Ajusta los valores según tus variables y preferencias
+
+
+=textos-comunes-azules($font-size, $color, $letter-spacing, $line-height, $text-align)
+    font-size: $font-size
+    color: $color
+    letter-spacing: $letter-spacing
+    line-height: $line-height
+    text-align: $text-align
+
+.Textos_comunes_azules
+    +textos-comunes-azules(25px, $color-4, 1px, 1.5, right) // Ajusta los valores según tus variables y preferencias
+
+
+=textos-comunes-negrita-rosa($font-size, $color, $letter-spacing, $line-height, $text-align)
+    font-size: $font-size
+    color: $color
+    font-weight: bold
+    letter-spacing: $letter-spacing
+    line-height: $line-height
+    text-align: $text-align
+    margin-left: 400px
+    margin-bottom: 20px
+
+.Textos_comunes_negrita_rosa
+    +textos-comunes-negrita-rosa(22px, $color-2, 0.5px, 1.5, right) // Ajusta los valores según tus variables y preferencias
+
+
+//Mixin botones 
+
+=cta-button($text-color, $font-weight: normal, $font-size: 22px, $padding: 10px 20px, $border-radius: 50px)
+    background-color: transparent
+    border: 2px solid $color-4
+    color: $color-4
+    font-weight: $font-weight
+    font-size: $font-size
+    padding: $padding
+    border-radius: $border-radius
+    cursor: pointer
+    transition: background-color 0.3s, color 0.3s
+
+.cta-button
+    +cta-button($color-1)
+
+.cta-button:hover
+    background-color: $color-3
+    border-color: $color-3
+    color: $color-1
+
+
+
+    
 // Establecemos los estilos generales para todos los elementos
 *
     box-sizing: border-box
@@ -25,7 +98,9 @@ body
     background-color: $color-1
 
     .header
-        background-color: $color-1
+        background-color: transparent
+        background-size: cover
+        background-position: center
         display: flex
         height: 90px
         justify-content: space-between
@@ -39,34 +114,9 @@ body
             &:hover
                 transform: scale(1.2)
 
-        #search
-            display: flex
-            justify-content: center
-            align-items: center
-            background-color: $color-1
-            border: 2px solid $color-6
-            border-radius: 20px
-            padding: 5px
-            width: 300px
-
-            input[type="text"]
-                flex: 1
-                border: none
-                padding: 5px
-                font-size: 16px
-                background-color: $color-1
-                color: $color-6 // cambia el color dentro de la barra de navegacion
-                outline: none // Elimina el borde blanco
-
-            button
-                background-color: $color-1
-                color: $color-6
-                border: none
-                border-radius: 100px
-                padding: 0px 12px
-                cursor: pointer
 
 .nav-links
+    margin-right: -100px
     list-style: none
 
     li
@@ -80,22 +130,13 @@ body
         &:hover
             border-color: $color-3 // Cambia el color del borde al mismo color que el texto
     a
-        font-size: 1.1rem
+        font-size: 1.2rem
         color: $color-6
         text-decoration: none
 
         &:hover
             color: $color-3
 
-    @media screen and (max-width: 768px)
-        .header
-            padding: 5px 5%
-        
-        #search
-            width: 200px
-
-            input[type="text"]
-                font-size: 14px
 
 
     //Banner
@@ -104,7 +145,7 @@ body
     background-image: url('fondo-2.png')
     background-size: cover
     background-position: center
-    height: 400px // Ajusta la altura según sea necesario
+    height: 800px // Ajusta la altura según sea necesario
     display: flex
     justify-content: center
     align-items: center
@@ -113,21 +154,30 @@ body
 .banner-content
     display: flex
 
+
 .left-section
+    width: 50% // La imagen ocupa la mitad del ancho del banner
     margin-right: 20px // Ajusta el margen entre la imagen y el texto según sea necesario
 
+    img
+        max-width: 80vh // La imagen no sobrepasa el ancho del contenedor
+        margin-left: 150px // Ajusta el margen entre la imagen y el texto según sea necesario
+
+
 .right-section
-    text-align: left // Alinea el contenido del lado derecho a la izquierda
+    text-align: right // Alinea el contenido del lado derecho a la izquierda
+    width: 50% // El contenido ocupa la mitad del ancho del banner
+    margin-right: 100px // Ajusta el margen entre la imagen y el texto según sea necesario
+    margin-top: 100px // Ajusta el margen entre la imagen y el texto según sea necesario
 
-.cta-button
-    background-color: transparent
-    border: 2px solid white
-    color: white
-    padding: 10px 20px
-    border-radius: 5px
-    cursor: pointer
-    transition: background-color 0.3s, color 0.3s
 
-.cta-button:hover
-    background-color: white
-    color: black
+
+
+.separator
+    border: none
+    border-top: 8px solid $color-4
+    margin-bottom: 20px
+    width: 100px
+    margin-right: 0 // Restablece el margen derecho
+    margin-left: auto // Alinea la separadora a la derecha
+    border-radius: 50px
