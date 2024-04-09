@@ -1,0 +1,133 @@
+// Definimos las variables Sass
+$color-1: #F4F4F4
+$color-2: #FF0052
+$color-3: #6C39ED
+$color-4: #09012A
+$color-5: #08F7D4
+$color-6: #242424
+$font-family-1: 'Gontserrat', sans-serif // Primera fuente
+$letra-default: 1.3rem
+$letra-pequenia: 1.05rem
+$letra-mediana: 1.7rem
+$letra-grande: 3.5rem
+$letra-extraGrande: 4rem
+
+// Establecemos los estilos generales para todos los elementos
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    font-size: $letra-pequenia
+    font-family: $font-family-1
+
+// Aplicamos los estilos al cuerpo de la página
+body
+    background-color: $color-1
+
+    .header
+        background-color: $color-1
+        display: flex
+        height: 90px
+        justify-content: space-between
+        align-items: center
+        padding: 5px 10%
+
+        #logo-1
+            width: 60px
+            cursor: pointer
+
+            &:hover
+                transform: scale(1.2)
+
+        #search
+            display: flex
+            justify-content: center
+            align-items: center
+            background-color: $color-1
+            border: 2px solid $color-6
+            border-radius: 20px
+            padding: 5px
+            width: 300px
+
+            input[type="text"]
+                flex: 1
+                border: none
+                padding: 5px
+                font-size: 16px
+                background-color: $color-1
+                color: $color-6 // cambia el color dentro de la barra de navegacion
+                outline: none // Elimina el borde blanco
+
+            button
+                background-color: $color-1
+                color: $color-6
+                border: none
+                border-radius: 100px
+                padding: 0px 12px
+                cursor: pointer
+
+.nav-links
+    list-style: none
+
+    li
+        display: inline-block
+        padding: 5px 15px
+        border: 2px solid $color-6 // Borde blanco de 2px
+        border-radius: 30px // Radio de borde de 10px para cada elemento
+        margin-right: 10px // Agrega un margen derecho de 10px entre los elementos
+        transition: all 0.3s ease // Agrega transición suave para los cambios
+
+        &:hover
+            border-color: $color-3 // Cambia el color del borde al mismo color que el texto
+    a
+        font-size: 1.1rem
+        color: $color-6
+        text-decoration: none
+
+        &:hover
+            color: $color-3
+
+    @media screen and (max-width: 768px)
+        .header
+            padding: 5px 5%
+        
+        #search
+            width: 200px
+
+            input[type="text"]
+                font-size: 14px
+
+
+    //Banner
+
+.banner
+    background-image: url('fondo-2.png')
+    background-size: cover
+    background-position: center
+    height: 400px // Ajusta la altura según sea necesario
+    display: flex
+    justify-content: center
+    align-items: center
+    color: white // Color de texto blanco por defecto
+
+.banner-content
+    display: flex
+
+.left-section
+    margin-right: 20px // Ajusta el margen entre la imagen y el texto según sea necesario
+
+.right-section
+    text-align: left // Alinea el contenido del lado derecho a la izquierda
+
+.cta-button
+    background-color: transparent
+    border: 2px solid white
+    color: white
+    padding: 10px 20px
+    border-radius: 5px
+    cursor: pointer
+    transition: background-color 0.3s, color 0.3s
+
+.cta-button:hover
+    background-color: white
+    color: black

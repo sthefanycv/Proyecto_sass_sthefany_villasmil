@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1.05rem;
+  font-family: "Gontserrat", sans-serif;
+}
+
+body {
+  background-color: #F4F4F4;
+}
+body .header {
+  background-color: #F4F4F4;
+  display: flex;
+  height: 90px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10%;
+}
+body .header #logo-1 {
+  width: 60px;
+  cursor: pointer;
+}
+body .header #logo-1:hover {
+  transform: scale(1.2);
+}
+body .header #search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F4F4F4;
+  border: 2px solid #242424;
+  border-radius: 20px;
+  padding: 5px;
+  width: 300px;
+}
+body .header #search input[type=text] {
+  flex: 1;
+  border: none;
+  padding: 5px;
+  font-size: 16px;
+  background-color: #F4F4F4;
+  color: #242424;
+  outline: none;
+}
+body .header #search button {
+  background-color: #F4F4F4;
+  color: #242424;
+  border: none;
+  border-radius: 100px;
+  padding: 0px 12px;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+}
+.nav-links li {
+  display: inline-block;
+  padding: 5px 15px;
+  border: 2px solid #242424;
+  border-radius: 30px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+.nav-links li:hover {
+  border-color: #6C39ED;
+}
+.nav-links a {
+  font-size: 1.1rem;
+  color: #242424;
+  text-decoration: none;
+}
+.nav-links a:hover {
+  color: #6C39ED;
+}
+@media screen and (max-width: 768px) {
+  .nav-links .header {
+    padding: 5px 5%;
+  }
+  .nav-links #search {
+    width: 200px;
+  }
+  .nav-links #search input[type=text] {
+    font-size: 14px;
+  }
+}
+
+.banner {
+  background-image: url("fondo-2.png");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.banner-content {
+  display: flex;
+}
+
+.left-section {
+  margin-right: 20px;
+}
+
+.right-section {
+  text-align: left;
+}
+
+.cta-button {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: white;
+  color: black;
+}/*# sourceMappingURL=style_index.css.map */
