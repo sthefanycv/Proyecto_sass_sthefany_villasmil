@@ -1,0 +1,354 @@
+// Definimos las variables Sass
+$color-1: #F4F4F4
+$color-2: #FF0052
+$color-3: #6C39ED
+$color-4: #09012A
+$color-5: #08F7D4
+$color-6: #242424
+$color-7: #c2c2c2
+$font-family-1: 'Gontserrat', sans-serif
+$letra-default: 1.3rem
+$letra-pequenia: 1.05rem
+$letra-mediana: 1.7rem
+$letra-grande: 3.5rem
+$letra-extraGrande: 4rem
+
+//MIXIN DE TEXTOS COMUNES
+
+
+
+@mixin texto_comunes_centrados_blancos($font-size, $color: white, $letter-spacing: 1px, $line-height: 1.5)
+  font-size: $font-size
+  color: $color
+  letter-spacing: $letter-spacing
+  line-height: $line-height
+  text-align: center  // Center text alignment
+  // Removed margin-left: 100px; as it's not needed for centering
+
+.texto_comunes_centrados_blancos
+  @include texto_comunes_centrados_blancos(22px, white, 1px, 1.5)
+  
+
+
+
+//TIULOS CENTRANDOS 
+
+@mixin titulos-principales-centrados($font-size, $color, $font-weight, $font-style, $margin-bottom)
+  font-size: $font-size
+  color: $color
+  font-weight: $font-weight
+  font-style: $font-style
+  margin-bottom: $margin-bottom
+  text-align: center  // Added to center text
+
+.Titulos_Principales
+  @include titulos-principales-centrados(60px, $color-1, bold, normal, 10px)
+
+
+
+
+//Mixin botones 
+
+
+@mixin botones-llamada-a-la-accion($text-color, $font-weight: normal, $font-size: 22px, $padding: 10px 20px, $border-radius: 50px) 
+  background-color: transparent
+  border: 2px solid $text-color
+  color: $text-color
+  font-weight: $font-weight
+  font-size: $font-size
+  padding: $padding
+  border-radius: $border-radius
+  cursor: pointer
+  transition: background-color 0.3s, color 0.3s
+  margin-top: 20px
+
+
+.boton-llamada-la-accion  // Class name changed to match mixin name
+  @include botones-llamada-a-la-accion($color-1)
+
+.boton-llamada-la-accion:hover
+  background-color: $color-5
+  border-color: $color-5
+  color: $color-4
+
+
+// Estilos generales para todos los elementos
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    font-size: $letra-pequenia
+    font-family: $font-family-1
+
+// Estilos al cuerpo de la página
+body
+    background-color: $color-1
+
+    .header
+        background-color: transparent
+        background-size: cover
+        background-position: center
+        display: flex
+        height: 90px
+        justify-content: space-between
+        align-items: center
+        padding: 5px 10%
+
+        #logo-1
+            width: 60px
+            cursor: pointer
+
+
+            &:hover
+                transform: scale(1.2)
+
+.nav-links
+    margin-right: -100px
+    list-style: none
+
+    li
+        display: inline-block
+        padding: 5px 15px
+        border: 2px solid $color-6
+        border-radius: 30px
+        margin-right: 10px
+        transition: all 0.3s ease
+
+        &:hover
+            border-color: $color-3
+    a
+        font-size: 1.2rem
+        color: $color-6
+        text-decoration: none
+
+        &:hover
+            color: $color-3
+
+    //BANNER
+
+.banner-sobre-mi
+  background-image: url('FONDO-SOBREMI.png')
+  background-size: cover
+  background-position: center
+  display: flex
+  flex-direction: column
+  height: 100vh
+
+.superior-sobre-mi
+  flex: 1
+  padding: 20px
+  text-align: center
+  color: white
+  margin-top: 30px
+
+.inferior-sobre-mi
+  flex: 1
+  display: flex
+  justify-content: center
+  align-items: center
+
+img
+  width: 700px
+  &.imagen-flotante-sobre-mi
+    animation: float 3s infinite alternate
+
+@keyframes float
+  0%, 100%
+    transform: translateY(0)
+  50%
+    transform: translateY(-10px)
+
+//CV PARTE 1 
+
+.cv_parte_1
+  display: flex
+  flex-wrap: wrap
+  padding: 60px
+  margin-top: 50px
+  margin-left: 100px
+
+
+
+  .cv_parte_1_izquierda, .cv_parte_1_derecha
+    width: 50%
+    margin-bottom: 20px
+
+
+    .contenedor-icono-texto
+      display: flex
+      align-items: center
+
+      .icono
+        width: 90px
+        margin-right: 10px
+
+    h2
+      font-size: 2.5rem
+      margin-bottom: 10px
+
+    .separador-cv
+      border: 1px solid #ccc
+      border-radius: 5px
+      margin: 10px 0
+      width: 80px
+      margin-top: 20px
+
+    ul
+      list-style: none
+      padding: 0
+
+      li
+        margin-bottom: 25px
+        margin-top: 20px
+        font-family: $font-family-1
+        font-size: 22px
+        line-height: 1.5
+
+        
+
+    p
+      font-family: $font-family-1
+      font-size: 20px
+      font-weight: 900
+      margin-bottom: -10px
+
+  @media (max-width: 768px)
+    .cv_parte_1_izquierda, .cv_parte_1_derecha
+      width: 100%
+
+//CV PARTE 2
+
+section.habilidades_parte_1
+  margin-top: 50px
+  padding: 20px
+  display: flex  // Enables flexbox for horizontal centering
+  flex-direction: column  // Stacks elements vertically
+  background-color: $color-4
+  margin-bottom: 20px
+
+  h2
+    margin-bottom: 10px
+    text-align: center  // Centers text horizontally
+    margin-bottom: 20px
+    font-family: $font-family-1
+    font-size: 40px
+    font-weight: 900
+    color: $color-1
+    margin-top: 20px
+
+  p
+    margin-bottom: 100px
+    text-align: center  // Centers text horizontally
+    font-family: $font-family-1
+    font-size: 25px
+    color: $color-1
+
+  .grid-imagenes
+    display: grid
+    grid-template-columns: repeat(4, 1fr)  // Adjust for columns
+    grid-gap: 50px  // Adjust image spacing
+    justify-content: center  // Centers images horizontally within the grid
+    margin-left: 200px
+    margin-bottom: 40px
+
+
+    img.imagen-habilidad
+      width: 150px
+      object-fit: cover  // Ensure images fit container
+      transition: transform 0.3s ease-in-out
+      
+      &:hover
+       transform: scale(1.1)
+
+  .contenedor-titulo-imagen
+    margin-top: 20px
+    text-align: center  // Centers content within the container
+
+    h3.titulo-imagen
+      font-size: 1.5rem
+      margin-bottom: 5px
+
+  hr.separador
+    width: 50px
+    margin: 0 auto
+    border-color: #ccc
+
+  @media (max-width: 768px)
+    .grid-imagenes
+      grid-template-columns: repeat(2, 1fr)  // Adjust for smaller screens
+
+
+    
+
+//contacto
+
+section.contactos
+  padding: 20px
+  text-align: center
+  margin-bottom: 20px
+
+  h2
+    margin-bottom: 10px
+    text-align: center  // Centers text horizontally
+    margin-bottom: 20px
+    font-family: $font-family-1
+    font-size: 50px
+    font-weight: 900
+    color: $color-4
+    margin-top: 20px
+
+  .grid-contactos
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-gap: 10px
+    margin-left: 200px
+
+    a.contacto
+      margin-top: 50px
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 100px
+      height: 100px
+      border-radius: 50%
+      background-color: #979797
+      transition: background-color 0.2s ease-in-out
+      margin-left: 50px
+
+      &:hover
+        background-color: $color-3
+      img
+        width: 50px
+        height: 50px
+
+    //FOOTER
+
+.footer
+    background-color: $color-2 
+    padding: 20px 
+    text-align: center
+
+
+.footer-nav
+    margin-top: 10px 
+
+ul
+    list-style: none 
+    padding: 0 
+
+li
+    display: inline-block 
+
+.a-footer    
+    color: $color-1 
+    text-decoration: none 
+    margin: 0 10px 
+    opacity: 70%
+    transition: font-size 0.3s 
+
+a:hover
+    font-size: 16px 
+
+.copyright
+    color: #fff 
+    font-size: 14px 

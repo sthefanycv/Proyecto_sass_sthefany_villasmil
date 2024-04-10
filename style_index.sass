@@ -5,13 +5,13 @@ $color-3: #6C39ED
 $color-4: #09012A
 $color-5: #08F7D4
 $color-6: #242424
-$font-family-1: 'Gontserrat', sans-serif // Primera fuente
+$color-7: #c2c2c2
+$font-family-1: 'Gontserrat', sans-serif 
 $letra-default: 1.3rem
 $letra-pequenia: 1.05rem
 $letra-mediana: 1.7rem
 $letra-grande: 3.5rem
 $letra-extraGrande: 4rem
-
 
 //Mixins 
 
@@ -23,18 +23,27 @@ $letra-extraGrande: 4rem
     margin-bottom: $margin-bottom
 
 .Titulos_Principales
-    +titulos-principales(60px, $color-2, bold, normal, 10px) // Ajusta los valores según tus variables y preferencias
+    +titulos-principales(60px, $color-2, bold, normal, 10px) 
 
 =titulos-secundarios($font-size, $color, $font-style, $font-weight, $margin-bottom)
     font-size: $font-size
     color: $color
     font-style: $font-style
-    font-weight: $font-weight // Agregamos font-weight
-    margin-bottom: $margin-bottom // Agregar margen inferior
+    font-weight: $font-weight 
+    margin-bottom: $margin-bottom 
 
 .Titulos_secundarios
-    +titulos-secundarios(30px, $color-4, bold, normal, 15px) // Ajusta los valores según tus variables y preferencias
+    +titulos-secundarios(30px, $color-4, bold, normal, 15px) 
+=titulos_principales_izquierda($font-size, $color, $font-style, $font-weight, $margin-bottom)
+    font-size: $font-size
+    color: $color
+    font-style: $font-style
+    font-weight: $font-weight
+    margin-bottom: $margin-bottom
+    margin-left: 100px
 
+.titulos_principales_izquierda
+    +titulos_principales_izquierda(50px, $color-2, normal, bold, 20px)
 
 =textos-comunes-azules($font-size, $color, $letter-spacing, $line-height, $text-align)
     font-size: $font-size
@@ -43,9 +52,8 @@ $letra-extraGrande: 4rem
     line-height: $line-height
     text-align: $text-align
 
-.Textos_comunes_azules
-    +textos-comunes-azules(25px, $color-4, 1px, 1.5, right) // Ajusta los valores según tus variables y preferencias
-
+.textos_comunes_azules
+    +textos-comunes-azules(25px, $color-4, 1px, 1.5, right) 
 
 =textos-comunes-negrita-rosa($font-size, $color, $letter-spacing, $line-height, $text-align)
     font-size: $font-size
@@ -58,7 +66,23 @@ $letra-extraGrande: 4rem
     margin-bottom: 20px
 
 .Textos_comunes_negrita_rosa
-    +textos-comunes-negrita-rosa(22px, $color-2, 0.5px, 1.5, right) // Ajusta los valores según tus variables y preferencias
+    +textos-comunes-negrita-rosa(22px, $color-2, 0.5px, 1.5, right) 
+
+=textos-comunes-azules-left($font-size, $color, $letter-spacing, $line-height, $text-align)
+    font-size: $font-size
+    color: $color
+    letter-spacing: $letter-spacing
+    line-height: $line-height
+    text-align: $text-align
+    margin-left: 100px
+
+.textos_comunes_azules_left
+    +textos-comunes-azules-left(22px, $color-4, 1px, 1.5, left) 
+
+
+
+
+
 
 
 //Mixin botones 
@@ -82,10 +106,7 @@ $letra-extraGrande: 4rem
     border-color: $color-3
     color: $color-1
 
-
-
-    
-// Establecemos los estilos generales para todos los elementos
+// Estilos generales para todos los elementos
 *
     box-sizing: border-box
     margin: 0
@@ -93,11 +114,11 @@ $letra-extraGrande: 4rem
     font-size: $letra-pequenia
     font-family: $font-family-1
 
-// Aplicamos los estilos al cuerpo de la página
+// Estilos al cuerpo de la página
 body
     background-color: $color-1
 
-    .header
+.header
         background-color: transparent
         background-size: cover
         background-position: center
@@ -110,10 +131,10 @@ body
         #logo-1
             width: 60px
             cursor: pointer
+            margin-top: -10px
 
             &:hover
                 transform: scale(1.2)
-
 
 .nav-links
     margin-right: -100px
@@ -122,22 +143,22 @@ body
     li
         display: inline-block
         padding: 5px 15px
-        border: 2px solid $color-6 // Borde blanco de 2px
-        border-radius: 30px // Radio de borde de 10px para cada elemento
-        margin-right: 10px // Agrega un margen derecho de 10px entre los elementos
-        transition: all 0.3s ease // Agrega transición suave para los cambios
+        border: 2px solid $color-6 
+        border-radius: 30px 
+        margin-right: 10px 
+        transition: all 0.3s ease
+        color: $color-6
 
         &:hover
-            border-color: $color-3 // Cambia el color del borde al mismo color que el texto
+            border-color: $color-3 
     a
         font-size: 1.2rem
         color: $color-6
         text-decoration: none
+        opacity: 100%
 
         &:hover
             color: $color-3
-
-
 
     //Banner
 
@@ -145,39 +166,245 @@ body
     background-image: url('fondo-2.png')
     background-size: cover
     background-position: center
-    height: 800px // Ajusta la altura según sea necesario
+    height: 800px 
     display: flex
     justify-content: center
     align-items: center
-    color: white // Color de texto blanco por defecto
+    color: white 
 
 .banner-content
     display: flex
 
-
 .left-section
-    width: 50% // La imagen ocupa la mitad del ancho del banner
-    margin-right: 20px // Ajusta el margen entre la imagen y el texto según sea necesario
+    width: 50% 
+    margin-right: 20px 
 
     img
-        max-width: 80vh // La imagen no sobrepasa el ancho del contenedor
-        margin-left: 150px // Ajusta el margen entre la imagen y el texto según sea necesario
-
+        max-width: 80vh 
+        margin-left: 150px 
 
 .right-section
-    text-align: right // Alinea el contenido del lado derecho a la izquierda
-    width: 50% // El contenido ocupa la mitad del ancho del banner
-    margin-right: 100px // Ajusta el margen entre la imagen y el texto según sea necesario
-    margin-top: 100px // Ajusta el margen entre la imagen y el texto según sea necesario
-
-
-
+    text-align: right 
+    width: 50% 
+    margin-right: 100px 
+    margin-top: 100px 
 
 .separator
     border: none
     border-top: 8px solid $color-4
     margin-bottom: 20px
     width: 100px
-    margin-right: 0 // Restablece el margen derecho
-    margin-left: auto // Alinea la separadora a la derecha
+    margin-right: 0 
+    margin-left: auto 
     border-radius: 50px
+
+
+
+
+    //SOBRE MI 
+
+.sobre-mi
+    background-image: url('sobremi.png')
+    background-size: cover
+    background-position: center
+    margin-top: 100px
+
+.section-margenes
+    display: flex
+
+
+.left-column
+    flex: 1
+    width: 50%
+    
+// Definir la imagen
+$img-width: 80%
+$img-margin-top: 50px
+$img-align-content: center
+$img-margin-left: 100px
+
+// Aplicar estilos a la imagen
+img
+  width: $img-width
+  margin-top: $img-margin-top
+  align-content: $img-align-content
+  margin-left: $img-margin-left
+
+  &:hover
+    transform: translateY(-5px)
+
+    
+
+
+.right-column
+    width: 50%
+    flex: 1
+    display: flex
+    flex-direction: column
+    margin-top: 80px
+    margin-left: 150px
+
+    .container
+        display: flex
+        align-items: center
+
+    img
+        width: 180px 
+        transition: transform 0.3s ease-in-out
+        margin-bottom: 50px
+        margin-right: 50px
+        &:hover
+    transform: scale(1.1) // Hace que la imagen se agrande ligeramente al hacer hover sobre ella
+
+.texto_normal
+    font-size: $letra-grande
+    color: $color-4
+    line-height: 1.5
+    text-align: left
+    margin-right: 20px
+
+.titulos_pequenios
+    font-size: $letra-grande
+    color: $color-4
+    line-height: 1.5
+    text-align: left
+
+
+//PROYECTOS
+
+
+
+.titulo-servicios
+    margin-top: 100px
+    font-family: $font-family-1
+    font-size: $letra-extraGrande
+    line-height: 1.5px
+    letter-spacing: 1px
+    text-align: center 
+    color: $color-3
+
+.texto-servicios
+    font-family: $font-family-1
+    font-size: $letra-mediana
+    letter-spacing: 1px
+    text-align: center 
+    color: $color-4
+
+.galeria
+    display: flex
+    justify-content: center 
+    margin-top: 20px
+
+    .paises
+        width: 150px
+        height: 150px
+        margin: 0 10px 
+    
+.galeria
+    display: flex
+    justify-content: center 
+    margin-top: 20px
+
+    .paises
+        width: 150px
+        height: 150px
+        margin: 0 10px 
+        animation: flotar 3s ease-in-out infinite 
+
+    @keyframes flotar
+        0%, 100%
+            transform: translateY(0) 
+        50%
+            transform: translateY(10px) 
+
+.contenedor-principal
+    font-family: $font-family-1
+    background-image: url('fondo-proyectos.png')
+    background-size: cover
+    background-position: center
+    margin-top: 10px
+    display: flex
+    flex-wrap: wrap 
+    justify-content: space-between  
+    align-items: center 
+    text-align: center
+    padding: 30px
+
+.contenedor
+    width: 30%
+    margin: 20px
+    float: left
+    border-radius: 10px
+    padding: 20px
+    text-align: center
+
+    img
+        width: 360px
+        margin-right: 100px
+        transition: transform 0.3s ease
+        border: solid 20px $color-7
+        border-radius: 100%
+
+    h2
+        font-family: $font-family-1
+        color: $color-1
+        font-size: $letra-mediana
+        letter-spacing: 0.5px
+
+    p
+        font-family: $font-family-1
+        color: $color-1
+        font-size: $letra-default
+        line-height: 35px
+        letter-spacing: 0.5px
+
+
+.boton_proyectos
+    margin-top: 20px
+    display: inline-block
+    padding: 10px 20px
+    font-size: 16px
+    border: none
+    border-radius: 50px
+    background-color: $color-2
+    color: $color-1
+    cursor: pointer
+    transition: background-color 0.3s
+
+    &:hover:before
+        content: "Quiero "
+
+    &:hover
+        background-color: $color-3
+
+    //FOOTER
+
+.footer
+    background-color: $color-2 
+    padding: 20px 
+    text-align: center
+
+
+.footer-nav
+    margin-top: 10px 
+
+ul
+    list-style: none 
+    padding: 0 
+
+li
+    display: inline-block 
+
+.a-footer    
+    color: $color-1 
+    text-decoration: none 
+    margin: 0 10px 
+    opacity: 70%
+    transition: font-size 0.3s 
+
+a:hover
+    font-size: 16px 
+
+.copyright
+    color: #fff 
+    font-size: 14px 

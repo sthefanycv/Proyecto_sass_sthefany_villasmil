@@ -1,0 +1,318 @@
+.texto_comunes_centrados_blancos {
+  font-size: 22px;
+  color: white;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.Titulos_Principales {
+  font-size: 60px;
+  color: #F4F4F4;
+  font-weight: bold;
+  font-style: normal;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.boton-llamada-la-accion {
+  background-color: transparent;
+  border: 2px solid #F4F4F4;
+  color: #F4F4F4;
+  font-weight: normal;
+  font-size: 22px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 20px;
+}
+
+.boton-llamada-la-accion:hover {
+  background-color: #08F7D4;
+  border-color: #08F7D4;
+  color: #09012A;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1.05rem;
+  font-family: "Gontserrat", sans-serif;
+}
+
+body {
+  background-color: #F4F4F4;
+}
+body .header {
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  height: 90px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10%;
+}
+body .header #logo-1 {
+  width: 60px;
+  cursor: pointer;
+}
+body .header #logo-1:hover {
+  transform: scale(1.2);
+}
+
+.nav-links {
+  margin-right: -100px;
+  list-style: none;
+}
+.nav-links li {
+  display: inline-block;
+  padding: 5px 15px;
+  border: 2px solid #242424;
+  border-radius: 30px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+.nav-links li:hover {
+  border-color: #6C39ED;
+}
+.nav-links a {
+  font-size: 1.2rem;
+  color: #242424;
+  text-decoration: none;
+}
+.nav-links a:hover {
+  color: #6C39ED;
+}
+
+.banner-sobre-mi {
+  background-image: url("FONDO-SOBREMI.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.superior-sobre-mi {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  margin-top: 30px;
+}
+
+.inferior-sobre-mi {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 700px;
+}
+img.imagen-flotante-sobre-mi {
+  animation: float 3s infinite alternate;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.cv_parte_1 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 60px;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+.cv_parte_1 .cv_parte_1_izquierda, .cv_parte_1 .cv_parte_1_derecha {
+  width: 50%;
+  margin-bottom: 20px;
+}
+.cv_parte_1 .cv_parte_1_izquierda .contenedor-icono-texto, .cv_parte_1 .cv_parte_1_derecha .contenedor-icono-texto {
+  display: flex;
+  align-items: center;
+}
+.cv_parte_1 .cv_parte_1_izquierda .contenedor-icono-texto .icono, .cv_parte_1 .cv_parte_1_derecha .contenedor-icono-texto .icono {
+  width: 90px;
+  margin-right: 10px;
+}
+.cv_parte_1 .cv_parte_1_izquierda h2, .cv_parte_1 .cv_parte_1_derecha h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.cv_parte_1 .cv_parte_1_izquierda .separador-cv, .cv_parte_1 .cv_parte_1_derecha .separador-cv {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px 0;
+  width: 80px;
+  margin-top: 20px;
+}
+.cv_parte_1 .cv_parte_1_izquierda ul, .cv_parte_1 .cv_parte_1_derecha ul {
+  list-style: none;
+  padding: 0;
+}
+.cv_parte_1 .cv_parte_1_izquierda ul li, .cv_parte_1 .cv_parte_1_derecha ul li {
+  margin-bottom: 25px;
+  margin-top: 20px;
+  font-family: "Gontserrat", sans-serif;
+  font-size: 22px;
+  line-height: 1.5;
+}
+.cv_parte_1 .cv_parte_1_izquierda p, .cv_parte_1 .cv_parte_1_derecha p {
+  font-family: "Gontserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: -10px;
+}
+@media (max-width: 768px) {
+  .cv_parte_1 .cv_parte_1_izquierda, .cv_parte_1 .cv_parte_1_derecha {
+    width: 100%;
+  }
+}
+
+section.habilidades_parte_1 {
+  margin-top: 50px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #09012A;
+  margin-bottom: 20px;
+}
+section.habilidades_parte_1 h2 {
+  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Gontserrat", sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  color: #F4F4F4;
+  margin-top: 20px;
+}
+section.habilidades_parte_1 p {
+  margin-bottom: 100px;
+  text-align: center;
+  font-family: "Gontserrat", sans-serif;
+  font-size: 25px;
+  color: #F4F4F4;
+}
+section.habilidades_parte_1 .grid-imagenes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 50px;
+  justify-content: center;
+  margin-left: 200px;
+  margin-bottom: 40px;
+}
+section.habilidades_parte_1 .grid-imagenes img.imagen-habilidad {
+  width: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+section.habilidades_parte_1 .grid-imagenes img.imagen-habilidad:hover {
+  transform: scale(1.1);
+}
+section.habilidades_parte_1 .contenedor-titulo-imagen {
+  margin-top: 20px;
+  text-align: center;
+}
+section.habilidades_parte_1 .contenedor-titulo-imagen h3.titulo-imagen {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+section.habilidades_parte_1 hr.separador {
+  width: 50px;
+  margin: 0 auto;
+  border-color: #ccc;
+}
+@media (max-width: 768px) {
+  section.habilidades_parte_1 .grid-imagenes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+section.contactos {
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+section.contactos h2 {
+  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Gontserrat", sans-serif;
+  font-size: 50px;
+  font-weight: 900;
+  color: #09012A;
+  margin-top: 20px;
+}
+section.contactos .grid-contactos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin-left: 200px;
+}
+section.contactos .grid-contactos a.contacto {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #979797;
+  transition: background-color 0.2s ease-in-out;
+  margin-left: 50px;
+}
+section.contactos .grid-contactos a.contacto:hover {
+  background-color: #6C39ED;
+}
+section.contactos .grid-contactos a.contacto img {
+  width: 50px;
+  height: 50px;
+}
+
+.footer {
+  background-color: #FF0052;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-nav {
+  margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+}
+
+.a-footer {
+  color: #F4F4F4;
+  text-decoration: none;
+  margin: 0 10px;
+  opacity: 70%;
+  transition: font-size 0.3s;
+}
+
+a:hover {
+  font-size: 16px;
+}
+
+.copyright {
+  color: #fff;
+  font-size: 14px;
+}/*# sourceMappingURL=styles_sobre_mi.css.map */
