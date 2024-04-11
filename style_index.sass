@@ -102,10 +102,14 @@ $letra-extraGrande: 4rem
     +cta-button($color-1)
 
 .cta-button:hover
-    background-color: $color-3
+    background-color: trasparent
     border-color: $color-3
     color: $color-1
 
+.cta-button a
+    text-decoration: none
+    font-size: $letra-default
+    font-family: $font-family-1
 // Estilos generales para todos los elementos
 *
     box-sizing: border-box
@@ -233,7 +237,9 @@ img
   &:hover
     transform: translateY(-5px)
 
-    
+p
+        line-height: 1.5
+
 
 
 .right-column

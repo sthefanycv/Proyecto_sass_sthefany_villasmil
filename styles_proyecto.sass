@@ -1,0 +1,255 @@
+// Definimos las variables Sass
+$color-1: #F4F4F4
+$color-2: #FF0052
+$color-3: #6C39ED
+$color-4: #09012A
+$color-5: #08F7D4
+$color-6: #242424
+$color-7: #c2c2c2
+$font-family-1: 'Gontserrat', sans-serif 
+$letra-default: 1.3rem
+$letra-pequenia: 1.05rem
+$letra-mediana: 1.7rem
+$letra-grande: 3.5rem
+$letra-extraGrande: 4rem
+
+//MIXIN DE TEXTOS COMUNES
+
+
+
+@mixin texto_comunes_centrados_blancos($font-size, $color: white, $letter-spacing: 1px, $line-height: 1.5)
+  font-size: $font-size
+  color: $color
+  letter-spacing: $letter-spacing
+  line-height: $line-height
+  text-align: center  // Center text alignment
+  // Removed margin-left: 100px; as it's not needed for centering
+
+.texto_comunes_centrados_blancos
+  @include texto_comunes_centrados_blancos(22px, white, 1px, 1.5)
+
+
+//TIULOS CENTRANDOS 
+
+@mixin titulos-principales-centrados($font-size, $color, $font-weight, $font-style, $margin-bottom)
+  font-size: $font-size
+  color: $color
+  font-weight: $font-weight
+  font-style: $font-style
+  margin-bottom: $margin-bottom
+  text-align: center  // Added to center text
+
+.Titulos_Principales
+  @include titulos-principales-centrados(80px, $color-1, bold, normal, 10px)
+
+
+//Mixin botones 
+
+
+@mixin botones-llamada-a-la-accion($text-color, $font-weight: normal, $font-size: 22px, $padding: 10px 20px, $border-radius: 50px) 
+  background-color: transparent
+  border: 2px solid $text-color
+  color: $text-color
+  font-weight: $font-weight
+  font-size: $font-size
+  padding: $padding
+  border-radius: $border-radius
+  cursor: pointer
+  transition: background-color 0.3s, color 0.3s
+  margin-top: 20px
+
+
+.boton-llamada-la-accion  // Class name changed to match mixin name
+  @include botones-llamada-a-la-accion($color-1)
+
+.boton-llamada-la-accion:hover
+  background-color: $color-5
+  border-color: $color-5
+  color: $color-4
+
+
+
+
+
+
+// Estilos generales para todos los elementos
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    font-size: $letra-pequenia
+    font-family: $font-family-1
+
+// Estilos al cuerpo de la página
+body
+    background-color: $color-1
+
+.header
+        background-color: transparent
+        background-size: cover
+        background-position: center
+        display: flex
+        height: 90px
+        justify-content: space-between
+        align-items: center
+        padding: 5px 10%
+
+        #logo-1
+            width: 60px
+            cursor: pointer
+            margin-top: -10px
+
+            &:hover
+                transform: scale(1.2)
+
+.nav-links
+    margin-right: -100px
+    list-style: none
+
+    li
+        display: inline-block
+        padding: 5px 15px
+        border: 2px solid $color-6 
+        border-radius: 30px 
+        margin-right: 10px 
+        transition: all 0.3s ease
+        color: $color-6
+
+        &:hover
+            border-color: $color-3 
+    a
+        font-size: 1.2rem
+        color: $color-6
+        text-decoration: none
+        opacity: 100%
+
+        &:hover
+            color: $color-3
+
+    //BANNER
+
+.banner-sobre-mi
+  background-image: url('fondo-3.png')
+  background-size: cover
+  background-position: center
+  display: flex
+  flex-direction: column
+  height: 100vh
+
+.superior-sobre-mi
+  flex: 1
+  padding: 20px
+  text-align: center
+  color: white
+  margin-top: 120px
+
+.inferior-sobre-mi
+  flex: 1
+  display: flex
+  justify-content: center
+  align-items: center
+
+.foto_banner
+  width: 100vh
+
+
+    //proyectos
+
+.seccion-proyecto
+  margin: 60px
+  margin-bottom: 4rem
+  padding: 50px
+  background-color: #ece9e9
+  margin-top: 50px
+  text-align: center
+  border-radius: 50px
+  transition: transform 0.3s ease-in-out
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.179)
+
+
+
+.titulo-proyecto
+  font-size: 40px
+  font-weight: bold
+  margin-bottom: 20px
+  text-align: center
+  color: $color-4
+
+.titulo-proyecto a  
+  text-decoration: none
+  color: $color-4
+  font-size: 40px
+  font-weight: bold
+  margin-bottom: 20px
+  text-align: center
+  color: $color-4
+
+  &:hover  
+    color: $color-2
+
+    
+.descripcion-proyecto
+  color: $color-4
+  font-size: 25px
+  margin-bottom: 60px
+  text-align: center
+  color: $color-4
+
+
+.separador-proyecto
+  border: none
+  border-top: 1px solid #ddd
+  width: 50px
+
+.contenedor-imagenes
+  display: flex
+  justify-content: center
+  margin-bottom: 100px
+
+.grid-imagenes
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-gap: 1rem
+  list-style-type: none
+
+  li
+    img
+      width: 100%
+      height: auto
+      transition: transform 0.3s ease-in-out
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.595)
+
+    img:hover
+      transform: scale(1.01) 
+
+    //FOOTER
+
+.footer
+    background-color: $color-2 
+    padding: 20px 
+    text-align: center
+
+
+.footer-nav
+    margin-top: 10px 
+
+ul
+    list-style: none 
+    padding: 0 
+
+li
+    display: inline-block 
+
+.a-footer    
+    color: $color-1 
+    text-decoration: none 
+    margin: 0 10px 
+    opacity: 70%
+    transition: font-size 0.3s 
+
+a:hover
+    font-size: 16px 
+
+.copyright
+    color: #fff 
+    font-size: 14px 

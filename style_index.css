@@ -64,9 +64,15 @@
 }
 
 .cta-button:hover {
-  background-color: #6C39ED;
+  background-color: trasparent;
   border-color: #6C39ED;
   color: #F4F4F4;
+}
+
+.cta-button a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-family: "Gontserrat", sans-serif;
 }
 
 * {
@@ -191,6 +197,10 @@ img {
 }
 img:hover {
   transform: translateY(-5px);
+}
+
+p {
+  line-height: 1.5;
 }
 
 .right-column {
